@@ -30,7 +30,7 @@ public class CorsConfig {
 
         // Define los métodos HTTP permitidos
         // Solo estas operaciones podrán ejecutarse desde el frontend
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
         // Define qué headers están permitidos
         // "*" significa que se permiten todos los headers
@@ -41,7 +41,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         //Registramos la onfiuracion CORS para todas las rutas (/**)
         //Esto significa que aplica a todos los
-        source.registerCorsConfiguration("*/**", configuration);
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
 }
